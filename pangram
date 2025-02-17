@@ -1,0 +1,19 @@
+bool checkIfPangram(char* sentence) {
+    // Array to keep track of the presence of each letter
+    bool letters[26] = {false};
+    int len = strlen(sentence);
+    
+    // Mark the presence of each letter in the array
+    for (int i = 0; i < len; i++) {
+        letters[sentence[i] - 'a'] = true;
+    }
+    
+    // Check if all letters are present
+    for (int i = 0; i < 26; i++) {
+        if (!letters[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
